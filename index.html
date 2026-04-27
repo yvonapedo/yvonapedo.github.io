@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -267,5 +268,717 @@
     </footer>
 
     <script src="js/main.js"></script>
+=======
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yvon Apedo — AI Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Yvon<span>.</span>Apedo</div>
+  <div class="nav-links">
+    <a href="#about" class="desktop-only">About</a>
+    <a href="#research" class="desktop-only">Research</a>
+    <a href="#publications" class="desktop-only">Publications</a>
+    <a href="presentations.html" class="desktop-only">Presentations</a>
+    <a href="https://github.com/yvonapedo" target="_blank">GitHub</a>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☽ dark</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-deco"></div>
+  <p class="hero-eyebrow">AI Researcher · Paris, France</p>
+  <h1>Yvon <span>Apedo</span></h1>
+  <p class="hero-subtitle">
+    PhD researcher specialising in <strong>efficient multimodal AI</strong> —
+    compressing Vision-Language & Vision-Language-Action models for the real world.
+  </p>
+  <div class="hero-tags">
+    <span class="tag accent">VLM Token Pruning</span>
+    <span class="tag violet">VLA Models</span>
+    <span class="tag">SVD-PRUNE</span>
+    <span class="tag">LLaVA · Qwen-VL</span>
+    <span class="tag">OpenVLA · π₀</span>
+    <span class="tag">Edge AI · Jetson Orin</span>
+    <span class="tag">IBISC Lab · Paris-Saclay</span>
+    <span class="tag">MSCA Fellow</span>
+  </div>
+  <div class="hero-cta">
+    <a href="https://www.linkedin.com/in/yvon-apedo-a93132341/" target="_blank" class="btn btn-primary">Connect on LinkedIn ↗</a>
+    <a href="#publications" class="btn btn-outline">View Publications</a>
+    <a href="pdf/CV_Yvon_Apedo_2026.pdf" target="_blank" class="btn btn-outline">📄 View CV</a>
+    <a href="vlm_hub/index.html" class="btn btn-rainbow">🔬 VLM Research Hub ↗</a>
+  </div>
+</div>
+<hr class="divider">
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-label">Introduction</p>
+  <h2 class="section-title">About Me</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I am a <strong>PhD researcher at Université Paris-Saclay</strong> (IBISC Lab), working under the supervision of
+        <strong>Dr. Martyna Poreba</strong>, <strong>Dr. Michal Szczepanski</strong>, and <strong>Prof. Samia Bouchafa</strong>.
+        My research sits at the intersection of computer vision, large multimodal models, and resource-constrained deployment.
+      </p>
+      <p>
+        My core focus is making <strong>Vision-Language Models (VLMs)</strong> and <strong>Vision-Language-Action (VLA) models</strong>
+        efficient enough to run on edge hardware — without retraining. I design training-free methods that analyse and reduce
+        redundant visual tokens before they reach the LLM backbone, with a particular emphasis on
+        deployment on the <strong>NVIDIA Jetson Orin</strong> for autonomous systems.
+      </p>
+      <p>
+        I am a <strong>Demythif.AI Fellow</strong> under Institut DATAIA, co-funded by the
+        Marie Skłodowska-Curie Actions (MSCA) and the European Union — a programme dedicated to responsible, human-centred AI.
+      </p>
+      <div class="highlight">
+        Workshop paper submitted to <strong>ICRA 2026 LOWI Workshop</strong> · arXiv preprint available
+      </div>
+      <div class="about-badges">
+        <div class="badge"><span class="ico" style="margin-right:6px;color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>MSc · Northwestern Polytechnical University, Xi'an</div>
+        <div class="badge"><span class="ico" style="margin-right:6px;color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>BSc (Eng) · Yunnan Tech &amp; Business University</div>
+        <div class="badge"><span class="ico" style="margin-right:6px;color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>Adv. Diploma · IPMC-Ghana</div>
+        <div class="badge"><span class="ico" style="margin-right:6px;color:var(--accent)"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>MSCA / Institut DATAIA Fellow</div>
+      </div>
+    </div>
+    <div>
+      <div class="profile-photo-wrap">
+        <img src="images/2025-removebg-preview.png" alt="Yvon Apedo — AI Researcher" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="profile-photo-placeholder">📷 photo.jpg</div>
+      </div>
+      <div class="info-card">
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+          <div>
+            <div class="info-key">institution</div>
+            <div class="info-val">Université Paris-Saclay / IBISC Lab</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          <div>
+            <div class="info-key">research area</div>
+            <div class="info-val">Efficient Multimodal AI (VLM &amp; VLA)</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <div class="info-key">supervisors</div>
+            <div class="info-val">Dr. Martyna Poreba · Dr. Michal Szczepanski · Prof. Samia Bouchafa</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="info-key">location</div>
+            <div class="info-val">Paris, France</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+          <div>
+            <div class="info-key">target hardware</div>
+            <div class="info-val">NVIDIA Jetson Orin (edge deployment)</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon ico" style="color:var(--text2)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+          <div>
+            <div class="info-key">links</div>
+            <div class="info-val" style="display:flex;flex-direction:column;gap:3px;">
+              <a href="https://github.com/yvonapedo" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/yvon-apedo-a93132341/" target="_blank">LinkedIn</a>
+              <a href="https://scholar.google.com/citations?user=DBQ62X8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+              <a href="https://orcid.org/0000-0002-3098-8545" target="_blank">ORCID 0000-0002-3098-8545</a>
+              <a href="mailto:komi.apedo@universite-paris-saclay.fr">komi.apedo@universite-paris-saclay.fr</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- RESEARCH -->
+<section id="research">
+  <p class="section-label">Focus Areas</p>
+  <h2 class="section-title">Research</h2>
+  <div class="research-grid">
+    <div class="research-card vlm">
+      <div class="research-card-icon ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-2.14Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24A2.5 2.5 0 0 0 17.5 4.5"/><line x1="12" y1="4.5" x2="12" y2="19.5"/></svg></div>
+      <h3>VLM Token Pruning — SVD-PRUNE</h3>
+      <div class="sub">Vision-Language Models · ICRA LOWI Workshop 2026</div>
+      <p>
+        A training-free method that inserts SVD-based leverage scoring into the LLM forward pass to prune
+        redundant visual tokens. Evaluated on LLaVA-1.5 7B &amp; 13B and Qwen-VL across ScienceQA, GQA,
+        POPE, MMStar, AI2D, TextVQA, and MMBench. Achieves 4× speedup at 16 tokens vs the
+        576-token baseline — with configurable injection layer via environment variables.
+      </p>
+      <div class="models">
+        <span class="model-tag">LLaVA-1.5 7B</span>
+        <span class="model-tag">LLaVA-1.5 13B</span>
+        <span class="model-tag">Qwen-VL</span>
+        <span class="model-tag">LLaMA backbone</span>
+        <span class="model-tag">lmms-eval</span>
+        <span class="model-tag">VLMEvalKit</span>
+      </div>
+    </div>
+    <div class="research-card vla">
+      <div class="research-card-icon ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/><path d="M9 21v-1a3 3 0 0 1 6 0v1"/></svg></div>
+      <h3>VLA Pruning — Robot Action Models</h3>
+      <div class="sub">Vision-Language-Action Models · Ongoing</div>
+      <p>
+        Extending visual token pruning to VLA models for robotic manipulation — an ongoing effort building on the VLM work.
+        Working with <strong>OpenVLA</strong>, <strong>π₀ (pi_0)</strong>, and <strong>CogAct</strong> on the
+        LIBERO simulation benchmark. A key challenge: spatial token importance differs fundamentally from VLMs —
+        removing spatially critical tokens can cause task failure. Targeting ICRA workshop, CoRL 2026, and NeurIPS 2026.
+      </p>
+      <div class="models">
+        <span class="model-tag">OpenVLA</span>
+        <span class="model-tag">π₀ (pi_0)</span>
+        <span class="model-tag">CogAct</span>
+        <span class="model-tag">DINOv2</span>
+        <span class="model-tag">SigLIP</span>
+        <span class="model-tag">LIBERO</span>
+      </div>
+    </div>
+    <div class="research-card edge">
+      <div class="research-card-icon ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h3>Edge Deployment</h3>
+      <div class="sub">Jetson Orin · Embedded Systems</div>
+      <p>
+        All pruning work targets real-world deployment on the <strong>NVIDIA Jetson Orin</strong>, a key constraint
+        shaping the design of SVD-PRUNE. Benchmarking inference latency, memory footprint, and accuracy
+        trade-offs directly on edge hardware for autonomous systems applications.
+      </p>
+      <div class="models">
+        <span class="model-tag">Jetson Orin</span>
+        <span class="model-tag">RTX 3080 16GB</span>
+        <span class="model-tag">Latency benchmarking</span>
+        <span class="model-tag">Memory efficiency</span>
+      </div>
+    </div>
+    <div class="research-card survey">
+      <div class="research-card-icon ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+      <h3>Survey: Token Pruning for VLMs</h3>
+      <div class="sub">Literature Review · Ongoing</div>
+      <p>
+        A systematic survey benchmarking state-of-the-art token pruning and merging techniques for VLMs.
+        Covers key design dimensions — where to prune, how to score token importance, merging strategies
+        (e.g. G2TM-style graph merging), training-free vs fine-tuning approaches — and open challenges
+        for the community.
+      </p>
+      <div class="models">
+        <span class="model-tag">ToMe</span>
+        <span class="model-tag">FastV</span>
+        <span class="model-tag">G2TM</span>
+        <span class="model-tag">VLA-Pruner</span>
+        <span class="model-tag">SP-VLA</span>
+        <span class="model-tag">LightVLA</span>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <p class="section-label">Academic Output</p>
+  <h2 class="section-title">Publications</h2>
+  <div class="pub-list">
+
+    <div class="pub-card">
+      <div>
+        <div class="pub-title">Toward Embedded Vision-Language Perception for Long-Term Autonomous Robots via Training-Free Token Pruning</div>
+        <div class="pub-authors"><strong>Yvon Apedo</strong>, Dr. Martyna Poreba, Dr. Michal Szczepanski, Prof. Samia Bouchafa</div>
+        <div class="pub-venue">ICRA 2026 · LOWI Workshop · arXiv preprint <span class="pub-year">2026</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/" target="_blank" class="pub-link">arXiv ↗</a>
+          <a href="https://github.com/yvonapedo/svdPrune" target="_blank" class="pub-link">Code ↗</a>
+        </div>
+      </div>
+      <span class="pub-status submitted">Under Review</span>
+    </div>
+
+    <div class="pub-card">
+      <div>
+        <div class="pub-title">Weakly Supervised Crack Segmentation Using Adversarial Learning and Transformers</div>
+        <div class="pub-authors"><strong>Yvon Apedo</strong>, Huanjie Tao</div>
+        <div class="pub-venue">Multimedia Systems, Springer <span class="pub-year">2025</span></div>
+        <div class="pub-links">
+          <a href="https://link.springer.com/article/10.1007/s00530-025-01850-1" target="_blank" class="pub-link">Paper ↗</a>
+          <a href="https://github.com/yvonapedo/ws_crack_seg" target="_blank" class="pub-link">Code ↗</a>
+        </div>
+      </div>
+      <span class="pub-status published">Published</span>
+    </div>
+
+    <div class="pub-card">
+      <div>
+        <div class="pub-title">Unsupervised Domain Adaptation for Crack Segmentation Based on Cross-Domain Stylization and Dual Adversarial Feature Learning</div>
+        <div class="pub-authors"><strong>Yvon Apedo</strong>, Huanjie Tao, Wu Gao, Chao Xie, Shusen Zhao</div>
+        <div class="pub-venue">Journal of Computing for Civil Engineering · ASCE <span class="pub-year">2025</span></div>
+        <div class="pub-links">
+          <a href="https://ascelibrary.org/doi/10.1061/JCCEE5.CPENG-7223" target="_blank" class="pub-link">Paper ↗</a>
+          <a href="https://github.com/yvonapedo/UDA_CRACK" target="_blank" class="pub-link">Code ↗</a>
+        </div>
+      </div>
+      <span class="pub-status published">Published</span>
+    </div>
+
+    <div class="pub-card">
+      <div>
+        <div class="pub-title">ADB-Crack: A Transformer-Based Framework with Adaptive Context Fusion and Dynamic Feature Refinement for High-Precision Pavement Crack Segmentation</div>
+        <div class="pub-authors"><strong>Yvon Apedo</strong>, Huanjie Tao, Chao Xie, Shusen Zhao</div>
+        <div class="pub-venue">Automation in Construction · Elsevier <span class="pub-year">2026</span></div>
+        <div class="pub-links">
+          <a href="https://github.com/yvonapedo/sstm_crackformer" target="_blank" class="pub-link">Paper ↗</a>
+          <a href="https://github.com/yvonapedo/sstm_crackformer" target="_blank" class="pub-link">Code ↗</a>
+        </div>
+      </div>
+      <span class="pub-status review">Under Review</span>
+    </div>
+
+    <div class="pub-card">
+      <div>
+        <div class="pub-title">Systematic Literature Review on Forecasting and Prediction of Technical Debt Evolution</div>
+        <div class="pub-authors">Ajibode Adekunle, <strong>Yvon Apedo</strong></div>
+        <div class="pub-venue">arXiv <span class="pub-year">2024</span></div>
+        <div class="pub-links">
+          <a href="https://arxiv.org/abs/2406.12026" target="_blank" class="pub-link">arXiv ↗</a>
+        </div>
+      </div>
+      <span class="pub-status published">Published</span>
+    </div>
+
+  </div>
+</section>
+<hr class="divider">
+<!-- VLM TOKEN PRUNING VISUALIZATION -->
+<section id="vlm-viz">
+  <p class="section-label">Core Research Method</p>
+  <h2 class="section-title">Visual Token Pruning</h2>
+
+  <p style="color:var(--text2);max-width:720px;margin-bottom:2.5rem;line-height:1.8;">
+    VLMs like LLaVA-1.5 encode images as <strong>576 visual tokens</strong> — most are redundant background patches.
+    SVD-based leverage scoring identifies which tokens carry the most information before they enter the LLM backbone.
+    Use the slider below to see how pruning affects token selection and model efficiency.
+  </p>
+
+  <div class="vlm-shell">
+    <!-- Model tabs -->
+    <div class="vlm-tabs-bar">
+      <button class="vlm-mtab active" data-mindex="0">LLaVA-1.5 7B</button>
+      <button class="vlm-mtab" data-mindex="1">LLaVA-1.5 13B</button>
+      <button class="vlm-mtab" data-mindex="2">Qwen-VL</button>
+    </div>
+
+    <div class="vlm-body">
+      <!-- Left: canvas + slider -->
+      <div class="vlm-left">
+        <div class="vlm-canvas-header">
+          <span class="vlm-canvas-label">Visual token importance map  <span style="font-size:0.7rem;color:var(--text3)">(24 × 24 = 576 tokens)</span></span>
+          <div class="vlm-legend-row">
+            <span class="vlm-dot" style="background:var(--accent)"></span><span>Kept</span>
+            <span class="vlm-dot" style="background:var(--text3);margin-left:10px"></span><span>Pruned</span>
+          </div>
+        </div>
+        <div class="vlm-canvas-wrap">
+          <canvas id="vlmCanvas"></canvas>
+        </div>
+        <div class="vlm-slider-area">
+          <div class="vlm-slider-row">
+            <div class="vlm-stat-chip">
+              <span class="vlm-stat-val" id="vlmCount">576</span>
+              <span class="vlm-stat-lbl">tokens</span>
+            </div>
+            <div class="vlm-stat-chip vlm-stat-accent">
+              <span class="vlm-stat-val" id="vlmSpeedup">1.0×</span>
+              <span class="vlm-stat-lbl">speedup</span>
+            </div>
+            <div class="vlm-stat-chip">
+              <span class="vlm-stat-val" id="vlmPruned">0%</span>
+              <span class="vlm-stat-lbl">pruned</span>
+            </div>
+          </div>
+          <input type="range" class="vlm-range" id="vlmSlider" min="16" max="576" value="576">
+          <div class="vlm-presets">
+            <button class="vlm-preset active" data-n="576">Full (576)</button>
+            <button class="vlm-preset" data-n="256">256</button>
+            <button class="vlm-preset" data-n="64">64</button>
+            <button class="vlm-preset" data-n="32">32</button>
+            <button class="vlm-preset" data-n="16">16 ⚡</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: pipeline + benchmarks -->
+      <div class="vlm-right">
+        <!-- Architecture pipeline -->
+        <div class="vlm-arch">
+          <div class="vlm-arch-title">Architecture</div>
+          <div class="vlm-arch-flow">
+            <div class="vlm-arch-box">
+              <div class="vlm-arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div>
+              <div class="vlm-arch-name">Image</div>
+              <div class="vlm-arch-sub">336×336</div>
+            </div>
+            <div class="vlm-arch-arr">→</div>
+            <div class="vlm-arch-box">
+              <div class="vlm-arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+              <div class="vlm-arch-name">Vision Enc.</div>
+              <div class="vlm-arch-sub" id="vlmEncSub">CLIP ViT-L</div>
+            </div>
+            <div class="vlm-arch-arr">→</div>
+            <div class="vlm-arch-box vlm-arch-highlight">
+              <div class="vlm-arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+              <div class="vlm-arch-name">SVD-PRUNE</div>
+              <div class="vlm-arch-sub" id="vlmPruneSub">576 → 576</div>
+            </div>
+            <div class="vlm-arch-arr">→</div>
+            <div class="vlm-arch-box">
+              <div class="vlm-arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.44-2.14Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24A2.5 2.5 0 0 0 17.5 4.5"/></svg></div>
+              <div class="vlm-arch-name">LLM</div>
+              <div class="vlm-arch-sub" id="vlmLLMSub">Vicuna-7B</div>
+            </div>
+            <div class="vlm-arch-arr">→</div>
+            <div class="vlm-arch-box">
+              <div class="vlm-arch-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div class="vlm-arch-name">Answer</div>
+              <div class="vlm-arch-sub">text output</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Benchmark bars -->
+        <div class="vlm-bench">
+          <div class="vlm-bench-title">Accuracy retention at current token count</div>
+          <div class="vlm-bars" id="vlmBars">
+            <!-- injected by JS -->
+          </div>
+          <div style="font-size:0.68rem;color:var(--text3);font-family:'JetBrains Mono',monospace;margin-top:0.8rem;">
+            Relative to 576-token baseline · LLaVA-1.5 7B
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PI0 SECTION -->
+<section id="pi0">
+  <p class="section-label">VLA Research Platform</p>
+  <h2 class="section-title">π₀ Cross-Embodiment Dataset</h2>
+
+  <p style="color:var(--text2);max-width:720px;margin-bottom:2.5rem;line-height:1.8;">
+    My VLA pruning work builds directly on <strong>π₀</strong> — Physical Intelligence's generalist robot foundation model
+    trained across <strong>8 distinct robot embodiments</strong>. Each robot presents a different kinematic chain and
+    task distribution — making token importance estimation fundamentally harder than in standard VLMs.
+    <a href="https://www.pi.website/blog/pi0" target="_blank" style="font-size:0.82rem;margin-left:6px;font-family:'JetBrains Mono',monospace;">pi.website ↗</a>
+  </p>
+
+  <div class="pi0-shell">
+
+    <!-- All 7 robots in a lineup – hover each to animate -->
+    <div class="pi0-lineup">
+
+      <div class="pi0-robot-card" data-robot="0">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-1.png&w=384&q=75" alt="UR5e" loading="lazy">
+        <div class="pi0-robot-name-tag">UR5e</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="1">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-2.png&w=384&q=75" alt="Bimanual UR5e" loading="lazy">
+        <div class="pi0-robot-name-tag">Bimanual UR5e</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="2">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-3.png&w=384&q=75" alt="Franka" loading="lazy">
+        <div class="pi0-robot-name-tag">Franka</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="3">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-4.png&w=384&q=75" alt="Bimanual Trossen" loading="lazy">
+        <div class="pi0-robot-name-tag">Bi. Trossen</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="4">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-5.png&w=384&q=75" alt="Bimanual ARX" loading="lazy">
+        <div class="pi0-robot-name-tag">Bi. ARX</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="5">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-6.png&w=384&q=75" alt="Mobile Trossen" loading="lazy">
+        <div class="pi0-robot-name-tag">Mob. Trossen</div>
+      </div>
+
+      <div class="pi0-robot-card" data-robot="6">
+        <div class="pi0-robot-glow"></div>
+        <img src="https://www.pi.website/_next/image?url=%2Fimages%2Frobots%2Frobot-7.png&w=384&q=75" alt="Mobile Fibocom" loading="lazy">
+        <div class="pi0-robot-name-tag">Mob. Fibocom</div>
+      </div>
+
+    </div>
+
+    <!-- Bottom info bar: active robot identity + tasks -->
+    <div class="pi0-info-bar">
+      <div class="pi0-bar-left">
+        <span class="pi0-chip-dot"></span>
+        <span id="pi0ActiveName" class="pi0-bar-name">UR5e</span>
+        <span class="pi0-bar-sep">·</span>
+        <span id="pi0ActiveType" class="pi0-bar-type">Single Arm · 6-DOF</span>
+        <span class="pi0-bar-idx-wrap">
+          <span id="pi0ActiveIdx">01</span><span class="pi0-bar-total">/07</span>
+        </span>
+      </div>
+      <div class="pi0-tasks">
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+          Make coffee
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Z"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          Load dishes
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          Fold laundry
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          Bag groceries
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/></svg>
+          Pack bottles
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 22h8"/><path d="M7 10h10"/><path d="M12 2v8"/><path d="M7 10c0 5.523 2 10 5 10s5-4.477 5-10"/></svg>
+          Open popcorn
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg>
+          Bus table
+        </span>
+        <span class="pi0-task">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-4"/><path d="M8 22H4a2 2 0 0 1-2-2v-4"/><path d="M2 12V8"/><path d="M2 4h4"/><path d="M8 2h8"/><path d="M16 2h4v4"/><path d="M22 10v4"/><path d="M22 18v2a2 2 0 0 1-2 2h-2"/><rect x="8" y="8" width="8" height="8" rx="1"/></svg>
+          Plug in cable
+        </span>
+      </div>
+    </div>
+
+  </div>
+</section>
+<hr class="divider">
+
+<!-- TECH STACK -->
+<section id="stack">
+  <p class="section-label">Toolkit</p>
+  <h2 class="section-title">Technical Skills</h2>
+  <div class="stack-grid">
+    <div class="stack-group">
+      <h4>VLM / VLA Models</h4>
+      <div class="stack-items">
+        <span class="stack-item">LLaVA-1.5</span>
+        <span class="stack-item">Qwen-VL</span>
+        <span class="stack-item">OpenVLA</span>
+        <span class="stack-item">π₀ (pi_0)</span>
+        <span class="stack-item">CogAct</span>
+        <span class="stack-item">Prismatic-7B</span>
+        <span class="stack-item">DINOv2</span>
+        <span class="stack-item">SigLIP</span>
+        <span class="stack-item">LLaMA-2</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <h4>Frameworks &amp; Libraries</h4>
+      <div class="stack-items">
+        <span class="stack-item">PyTorch</span>
+        <span class="stack-item">HuggingFace</span>
+        <span class="stack-item">lmms-eval</span>
+        <span class="stack-item">VLMEvalKit</span>
+        <span class="stack-item">timm</span>
+        <span class="stack-item">NumPy</span>
+        <span class="stack-item">OpenCV</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <h4>Research Methods</h4>
+      <div class="stack-items">
+        <span class="stack-item">Token Pruning</span>
+        <span class="stack-item">SVD / Leverage Scores</span>
+        <span class="stack-item">Token Merging</span>
+        <span class="stack-item">Attention Analysis</span>
+        <span class="stack-item">Semantic Segmentation</span>
+        <span class="stack-item">Domain Adaptation</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <h4>Benchmarks</h4>
+      <div class="stack-items">
+        <span class="stack-item">ScienceQA</span>
+        <span class="stack-item">GQA</span>
+        <span class="stack-item">POPE</span>
+        <span class="stack-item">MMStar</span>
+        <span class="stack-item">AI2D</span>
+        <span class="stack-item">TextVQA</span>
+        <span class="stack-item">MMBench</span>
+        <span class="stack-item">LIBERO</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <h4>Hardware &amp; Infra</h4>
+      <div class="stack-items">
+        <span class="stack-item">Jetson Orin</span>
+        <span class="stack-item">RTX 3080</span>
+        <span class="stack-item">Linux Server (SSH)</span>
+        <span class="stack-item">Docker</span>
+        <span class="stack-item">Conda</span>
+        <span class="stack-item">Git</span>
+      </div>
+    </div>
+    <div class="stack-group">
+      <h4>Languages</h4>
+      <div class="stack-items">
+        <span class="stack-item">Python</span>
+        <span class="stack-item">Java</span>
+        <span class="stack-item">JavaScript</span>
+        <span class="stack-item">Swift (iOS)</span>
+        <span class="stack-item">SQL</span>
+        <span class="stack-item">Bash</span>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <p class="section-label">Credentials</p>
+  <h2 class="section-title">Certifications</h2>
+  <div class="cert-grid">
+    <div class="cert-card">
+      <div class="cert-logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></svg></div>
+      <div>
+        <div class="cert-title">Learning AI Through Visualization</div>
+        <div class="cert-issuer">Columbia University</div>
+        <div class="cert-year">2025 · Taught by Ali Hirsa on Columbia+</div>
+        <a href="https://badges.plus.columbia.edu/90941ca9-a40d-41f6-8ad7-b050549696e1" target="_blank" class="cert-link">View Certificate ↗</a>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <div>
+        <div class="cert-title">Google Advanced Data Analytics Specialization</div>
+        <div class="cert-issuer">Google / Coursera</div>
+        <div class="cert-year">2025 · 6-course specialisation</div>
+        <a href="https://www.coursera.org/account/accomplishments/professional-cert/0WFEDQE43QXD" target="_blank" class="cert-link">View Certificate ↗</a>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+      <div>
+        <div class="cert-title">Machine Learning Specialization</div>
+        <div class="cert-issuer">Stanford University · DeepLearning.AI</div>
+        <div class="cert-year">2023 · Taught by Andrew Ng</div>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/PYMB2GTUCVDX" target="_blank" class="cert-link">View Certificate ↗</a>
+      </div>
+    </div>
+    <div class="cert-card">
+      <div class="cert-logo"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
+      <div>
+        <div class="cert-title">Deep Learning Specialization</div>
+        <div class="cert-issuer">DeepLearning.AI</div>
+        <div class="cert-year">2023 · Taught by Andrew Ng · CNNs, RNNs, Transformers</div>
+        <a href="https://www.coursera.org/account/accomplishments/specialization/V6ALXZLJM55B" target="_blank" class="cert-link">View Certificate ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+  <p class="section-label">Side Work</p>
+  <h2 class="section-title">Software Projects</h2>
+  <div class="proj-grid">
+    <div class="proj-card" style="border-color:var(--accent);">
+      <h4>VLM Research Hub</h4>
+      <p>Interactive dashboard for comparing VLM architectures and visualising token pruning benchmarks. Includes VLM timeline, pruning comparisons, and model performance charts.</p>
+      <a href="vlm_hub/index.html" class="proj-link">Open ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>ALAN AI News App</h4>
+      <p>React-based news web application with real-time AI integration via ALAN AI voice assistant.</p>
+      <a href="https://news-app-aa304.web.app/" target="_blank" class="proj-link">Live ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>Amazon Clone</h4>
+      <p>Full-stack replica with authentication, product listing, cart, and secure checkout flow.</p>
+      <a href="https://clone-bbb80.web.app/" target="_blank" class="proj-link">Live ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>HR-SSM</h4>
+      <p>Robust HR management web application built on the Spring-Struts-MyBatis (SSM) framework.</p>
+      <a href="https://github.com/yvonapedo/hrssm" target="_blank" class="proj-link">GitHub ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>Tourism Blog</h4>
+      <p>Dynamic, data-driven tourism blog built with JSP and a relational back-end.</p>
+      <a href="https://github.com/yvonapedo/touristblog" target="_blank" class="proj-link">GitHub ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>Project Peter (Android)</h4>
+      <p>Android application featuring user registration and picture publication.</p>
+      <a href="https://github.com/yvonapedo/Android_project_final" target="_blank" class="proj-link">GitHub ↗</a>
+    </div>
+    <div class="proj-card">
+      <h4>KOMI — Vehicles Sales (iOS)</h4>
+      <p>Swift iOS app for vehicle sales: user registration, listings, and booking functionality.</p>
+      <a href="https://github.com/yvonapedo/carIOS" target="_blank" class="proj-link">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Yvon<span>.</span>Apedo</div>
+      <div class="footer-copy" style="margin-top:6px;">PhD Researcher · IBISC Lab · Université Paris-Saclay</div>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/yvon-apedo-a93132341/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yvonapedo" target="_blank">GitHub</a>
+      <a href="https://arxiv.org/search/?searchtype=author&query=Apedo" target="_blank">arXiv</a>
+      <a href="#about">About</a>
+      <a href="#publications">Publications</a>
+    </div>
+    <div class="footer-copy">© 2025 Yvon Apedo</div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+>>>>>>> 22f6f16 (Initial commit)
 </body>
 </html>

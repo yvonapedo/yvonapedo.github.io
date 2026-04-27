@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -80,5 +81,378 @@
     </footer>
 
     <script src="js/main.js"></script>
+=======
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presentations — Yvon Apedo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Syne:wght@400;600;700;800&family=Figtree:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<style>
+  /* Page-specific */
+  .page-hero {
+    padding: 8rem 2rem 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .page-hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.15;
+  }
+  .page-hero p {
+    color: var(--text2);
+    font-size: 1rem;
+    max-width: 600px;
+  }
+
+  /* Filter tabs */
+  .filter-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+  .filter-btn {
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    padding: 5px 14px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text2);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+  }
+
+  /* Presentation list */
+  .pres-list {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .pres-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 1.4rem;
+    align-items: start;
+    transition: border-color 0.2s, transform 0.2s;
+    position: relative;
+  }
+  .pres-card:hover { border-color: var(--text3); transform: translateY(-1px); }
+  .pres-card.placeholder {
+    opacity: 0.45;
+    border-style: dashed;
+  }
+
+  /* Year badge */
+  .pres-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--text3);
+    padding-top: 3px;
+    white-space: nowrap;
+    min-width: 48px;
+    text-align: right;
+  }
+
+  /* Main content */
+  .pres-body {}
+  .pres-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+    line-height: 1.4;
+  }
+  .pres-venue {
+    font-size: 0.85rem;
+    color: var(--accent2);
+    font-style: italic;
+    margin-bottom: 0.25rem;
+  }
+  .pres-location {
+    font-size: 0.78rem;
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .pres-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.7rem;
+  }
+  .pres-tag {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    background: var(--tag-bg);
+    color: var(--accent);
+    border-radius: 4px;
+    padding: 2px 8px;
+    border: 1px solid transparent;
+  }
+
+  /* Type badge */
+  .pres-type {
+    font-size: 0.68rem;
+    font-family: 'JetBrains Mono', monospace;
+    border-radius: 20px;
+    padding: 3px 10px;
+    white-space: nowrap;
+    border: 1px solid;
+    height: fit-content;
+    margin-top: 2px;
+  }
+  .type-talk    { color: #2563eb; border-color: #2563eb30; background: #2563eb10; }
+  .type-poster  { color: #7c3aed; border-color: #7c3aed30; background: #7c3aed10; }
+  .type-invited { color: #059669; border-color: #05966930; background: #05966910; }
+  .type-workshop { color: #d97706; border-color: #d9770630; background: #d9770610; }
+
+  [data-theme="dark"] .type-talk    { color: #60a5fa; border-color: #60a5fa30; background: #60a5fa10; }
+  [data-theme="dark"] .type-poster  { color: #a78bfa; border-color: #a78bfa30; background: #a78bfa10; }
+  [data-theme="dark"] .type-invited { color: #34d399; border-color: #34d39930; background: #34d39910; }
+  [data-theme="dark"] .type-workshop { color: #fbbf24; border-color: #fbbf2430; background: #fbbf2410; }
+
+  /* Slides link */
+  .pres-link {
+    font-size: 0.72rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--text3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 10px;
+    transition: all 0.2s;
+    margin-top: 0.8rem;
+    display: inline-block;
+  }
+  .pres-link:hover { color: var(--accent); border-color: var(--accent); opacity: 1; }
+
+  /* Stats row */
+  .pres-stats {
+    display: flex;
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem 2.5rem;
+  }
+  .pres-stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .pres-stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+  .pres-stat-num span { color: var(--accent); }
+  .pres-stat-label {
+    font-size: 0.75rem;
+    color: var(--text3);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  @media (max-width: 768px) {
+    .pres-card { grid-template-columns: 1fr; gap: 0.6rem; }
+    .pres-year { text-align: left; }
+    .pres-stats { gap: 1.5rem; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">Yvon<span>.</span>Apedo</a>
+  <div class="nav-links">
+    <a href="index.html#about" class="desktop-only">About</a>
+    <a href="index.html#research" class="desktop-only">Research</a>
+    <a href="index.html#publications" class="desktop-only">Publications</a>
+    <a href="presentations.html" style="color:var(--accent);">Presentations</a>
+    <a href="https://www.linkedin.com/in/yvon-apedo-a93132341/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/yvonapedo" target="_blank">GitHub</a>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☽ dark</button>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-hero">
+  <p class="hero-eyebrow">Talks · Posters · Workshops</p>
+  <h1>Presentations</h1>
+  <p>Selected talks, workshop presentations, and posters given at international venues.</p>
+</div>
+
+<!-- STATS -->
+<div class="pres-stats">
+  <div class="pres-stat-item">
+    <div class="pres-stat-num">1<span>+</span></div>
+    <div class="pres-stat-label">Total Talks</div>
+  </div>
+  <div class="pres-stat-item">
+    <div class="pres-stat-num">1</div>
+    <div class="pres-stat-label">Countries</div>
+  </div>
+  <div class="pres-stat-item">
+    <div class="pres-stat-num">1</div>
+    <div class="pres-stat-label">Workshops</div>
+  </div>
+</div>
+
+<!-- FILTER -->
+<div class="pres-list" style="padding-bottom:0; gap:0; margin-bottom:1.5rem;">
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="filterPres(this,'all')">All</button>
+    <button class="filter-btn" onclick="filterPres(this,'talk')">Talks</button>
+    <button class="filter-btn" onclick="filterPres(this,'poster')">Posters</button>
+    <button class="filter-btn" onclick="filterPres(this,'workshop')">Workshops</button>
+    <button class="filter-btn" onclick="filterPres(this,'invited')">Invited</button>
+  </div>
+</div>
+
+<!-- PRESENTATIONS LIST -->
+<div class="pres-list">
+
+  <!-- ── 2026 ── -->
+  <p class="section-label" style="margin-bottom:0.5rem;">2026</p>
+
+  <div class="pres-card" data-type="workshop">
+    <div class="pres-year">Apr 2026</div>
+    <div class="pres-body">
+      <div class="pres-title">Efficient Vision-Language Models Through Token Pruning: Design Dimensions, Methods, and Challenges</div>
+      <div class="pres-venue">GDR IASIS Workshop on Frugality and Compression of Deep Learning Models</div>
+      <div class="pres-location">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Paris, France
+      </div>
+      <div class="pres-tags">
+        <span class="pres-tag">Token Pruning</span>
+        <span class="pres-tag">VLM</span>
+        <span class="pres-tag">Efficiency</span>
+      </div>
+      <a href="https://gdr-iasis.cnrs.fr/reunions/frugality-and-compression-of-deep-learning-models/" target="_blank" class="pres-link">Event page ↗</a>
+    </div>
+    <div class="pres-type type-workshop">workshop</div>
+  </div>
+
+  <!-- ── Placeholders ── -->
+  <p class="section-label" style="margin-bottom:0.5rem; margin-top:1.5rem;">Upcoming / TBD</p>
+
+  <div class="pres-card placeholder" data-type="talk">
+    <div class="pres-year">2026</div>
+    <div class="pres-body">
+      <div class="pres-title">Presentation Title</div>
+      <div class="pres-venue">Conference / Workshop Name</div>
+      <div class="pres-location">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Location TBD
+      </div>
+      <div class="pres-tags">
+        <span class="pres-tag">Topic</span>
+      </div>
+    </div>
+    <div class="pres-type type-talk">talk</div>
+  </div>
+
+  <div class="pres-card placeholder" data-type="poster">
+    <div class="pres-year">2026</div>
+    <div class="pres-body">
+      <div class="pres-title">Poster Title</div>
+      <div class="pres-venue">Conference / Workshop Name</div>
+      <div class="pres-location">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Location TBD
+      </div>
+      <div class="pres-tags">
+        <span class="pres-tag">Topic</span>
+      </div>
+    </div>
+    <div class="pres-type type-poster">poster</div>
+  </div>
+
+  <div class="pres-card placeholder" data-type="invited">
+    <div class="pres-year">TBD</div>
+    <div class="pres-body">
+      <div class="pres-title">Invited Talk Title</div>
+      <div class="pres-venue">Institution / Lab Seminar</div>
+      <div class="pres-location">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Location TBD
+      </div>
+      <div class="pres-tags">
+        <span class="pres-tag">Topic</span>
+      </div>
+    </div>
+    <div class="pres-type type-invited">invited</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-name">Yvon<span>.</span>Apedo</div>
+      <div class="footer-copy" style="margin-top:6px;">PhD Researcher · IBISC Lab · Université Paris-Saclay</div>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#publications">Publications</a>
+      <a href="presentations.html">Presentations</a>
+      <a href="https://www.linkedin.com/in/yvon-apedo-a93132341/" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yvonapedo" target="_blank">GitHub</a>
+    </div>
+    <div class="footer-copy">© 2025 Yvon Apedo</div>
+  </div>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.getElementById('themeBtn');
+    if (html.getAttribute('data-theme') === 'light') {
+      html.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀ light';
+    } else {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '☽ dark';
+    }
+  }
+
+  function filterPres(btn, type) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.pres-card').forEach(card => {
+      if (type === 'all' || card.dataset.type === type) {
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+</script>
+>>>>>>> 22f6f16 (Initial commit)
 </body>
 </html>
