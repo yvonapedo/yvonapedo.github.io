@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLM Research Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=1">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Global Navigation Bar -->
+    <nav class="global-navbar" id="global-navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-cube" style="margin-right:8px; font-size: 22px;"></i>
+            VLM Research Hub
+        </div>
+        <button class="navbar-hamburger" id="navHamburger" onclick="toggleMobileNav()" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar-links" id="navbarLinks">
+            <button class="navbar-link active" data-section="compare" onclick="showSection('compare')">Compare</button>
+            <button class="navbar-link" data-section="vlm" onclick="showSection('vlm')">VLM</button>
+            <button class="navbar-link" data-section="pruning" onclick="showSection('pruning')">Pruning</button>
+            <button class="navbar-link" data-section="contact" onclick="showSection('contact')">Get in Touch</button>
+            <button class="navbar-theme-toggle navbar-theme-mobile" id="themeToggleMobile" onclick="toggleGlobalTheme()">
+                <i class="fas fa-moon" style="font-size: 18px;"></i>
+                Dark
+            </button>
+        </div>
+        <button class="navbar-theme-toggle navbar-theme-desktop" id="themeToggle" onclick="toggleGlobalTheme()">
+            <i class="fas fa-moon" style="font-size: 18px;"></i>
+            Dark
+        </button>
+    </nav>
+
+    <!-- COMPARE SECTION -->
+    <div id="compare-section" class="section-container">
+        <div id="compare-app"></div>
+    </div>
+
+    <!-- VLM SECTION -->
+    <div id="vlm-section" class="section-container" style="display:none">
+        <div id="vlm-app"></div>
+    </div>
+
+    <!-- PRUNING SECTION -->
+    <div id="pruning-section" class="section-container" style="display:none">
+        <div id="prune-app"></div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div id="contact-section" class="section-container" style="display:none">
+        <div id="contact-app"></div>
+    </div>
+
+    <!-- Load data loader (replaces server.py) -->
+    <script src="embedded_data.js"></script>
+    <script src="data_loader.js"></script>
+    <!-- Load app scripts -->
+    <script src="vlm_app.js"></script>
+    <script src="prune_app.js"></script>
+    <script src="compare_app.js"></script>
+
+    <script>
+        // Global section management
+        let mountedApps = { compare: false, vlm: false, pruning: false, contact: false };
+        let appInstances = {};
+
+        function toggleMobileNav() {
+            document.getElementById('navbarLinks').classList.toggle('nav-open');
+        }
+
+        function showSection(name) {
+            // Hide all sections
+            document.querySelectorAll('.section-container').forEach(el => el.style.display = 'none');
+            // Show target
+            document.getElementById(name + '-section').style.display = 'block';
+
+            // Collapse mobile nav after selecting
+            document.getElementById('navbarLinks').classList.remove('nav-open');
+
+            // Update navbar active state
+            document.querySelectorAll('.navbar-link').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.navbar-link[data-section="${name}"]`).classList.add('active');
+
+            // Save active section
+            localStorage.setItem('activeSection', name);
+
+            // Lazy mount Vue apps
+            if (name === 'vlm' && !mountedApps.vlm) {
+                appInstances.vlm = createVlmApp();
+                appInstances.vlm.mount('#vlm-app');
+                mountedApps.vlm = true;
+            }
+            if (name === 'pruning' && !mountedApps.pruning) {
+                appInstances.pruning = createPruneApp();
+                appInstances.pruning.mount('#prune-app');
+                mountedApps.pruning = true;
+            }
+            if (name === 'compare' && !mountedApps.compare) {
+                appInstances.compare = createCompareApp();
+                appInstances.compare.mount('#compare-app');
+                mountedApps.compare = true;
+            }
+            if (name === 'contact' && !mountedApps.contact) {
+                mountContactApp();
+                mountedApps.contact = true;
+            }
+        }
+
+        function mountContactApp() {
+            const { createApp } = Vue;
+            appInstances.contact = createApp({
+                template: `
+                    <div class="container">
+                        <div class="contact-section">
+                            <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+                            <p class="contact-subtitle">Have a question, suggestion, or want to collaborate? Send me a message!</p>
+
+                            <div v-if="sent" class="message success">
+                                Thank you! Your message has been sent successfully.
+                            </div>
+
+                            <form @submit.prevent="sendMessage" class="contact-form" v-if="!sent">
+                                <div class="form-group-single">
+                                    <label>Your Name</label>
+                                    <input v-model="name" type="text" placeholder="John Doe" required>
+                                </div>
+                                <div class="form-group-single">
+                                    <label>Your Email</label>
+                                    <input v-model="email" type="email" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group-single">
+                                    <label>Subject</label>
+                                    <input v-model="subject" type="text" placeholder="Regarding VLM research...">
+                                </div>
+                                <div class="form-group-single">
+                                    <label>Message</label>
+                                    <textarea v-model="messageText" rows="6" placeholder="Write your message here..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn-primary" :disabled="sending">
+                                    <span v-if="sending"><i class="fas fa-spinner fa-spin"></i> Sending...</span>
+                                    <span v-else><i class="fas fa-paper-plane"></i> Send Message</span>
+                                </button>
+                            </form>
+
+                            <button v-if="sent" class="btn-secondary" @click="resetForm" style="margin-top:20px">
+                                Send Another Message
+                            </button>
+                        </div>
+                    </div>
+                `,
+                data() {
+                    return {
+                        name: '',
+                        email: '',
+                        subject: '',
+                        messageText: '',
+                        sending: false,
+                        sent: false
+                    };
+                },
+                methods: {
+                    async sendMessage() {
+                        this.sending = true;
+                        try {
+                            const subject = encodeURIComponent(this.subject || 'VLM Research Hub Contact');
+                            const body = encodeURIComponent(
+                                'Name: ' + this.name + '\n' +
+                                'Email: ' + this.email + '\n\n' +
+                                this.messageText
+                            );
+                            window.open('mailto:?subject=' + subject + '&body=' + body, '_blank');
+                            this.sent = true;
+                        } catch (e) {
+                            console.warn('Contact send failed:', e);
+                            this.sent = true;
+                        }
+                        this.sending = false;
+                    },
+                    resetForm() {
+                        this.name = '';
+                        this.email = '';
+                        this.subject = '';
+                        this.messageText = '';
+                        this.sent = false;
+                    }
+                }
+            });
+            appInstances.contact.mount('#contact-app');
+        }
+
+        // Global theme toggle
+        function toggleGlobalTheme() {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            document.body.style.background = next === 'dark'
+                ? 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'
+                : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            localStorage.setItem('globalTheme', next);
+            const label = next === 'dark' ? '<i class="fas fa-sun" style="font-size:18px"></i> Light' : '<i class="fas fa-moon" style="font-size:18px"></i> Dark';
+            document.getElementById('themeToggle').innerHTML = label;
+            document.getElementById('themeToggleMobile').innerHTML = label;
+        }
+
+        // Init on load
+        (function() {
+            // Restore theme
+            const savedTheme = localStorage.getItem('globalTheme') || 'dark';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.body.style.background = savedTheme === 'dark'
+                ? 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'
+                : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+            const label = savedTheme === 'dark' ? '<i class="fas fa-sun" style="font-size:18px"></i> Light' : '<i class="fas fa-moon" style="font-size:18px"></i> Dark';
+            document.getElementById('themeToggle').innerHTML = label;
+            document.getElementById('themeToggleMobile').innerHTML = label;
+
+            // Restore section
+            const savedSection = localStorage.getItem('activeSection') || 'compare';
+            showSection(savedSection);
+        })();
+    </script>
+</body>
+</html>
